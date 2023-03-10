@@ -1,0 +1,19 @@
+# name: 阿里云盘签到
+# desc: 用于阿里云盘每日自动签到
+# 脚本作者：@lowking
+
+http:
+  mitm:
+    - "auth.aliyundrive.com"
+
+cron:
+  # 阿里云盘签到
+  script:
+    - name: AliYunPan
+      cron: '6 0 * * *'
+      timeout: 60
+ 
+script-providers:
+  AliYunPan:
+    url: https://raw.githubusercontent.com/lowking/Scripts/master/ali/aliYunPanCheckIn.js
+    interval: 86400
